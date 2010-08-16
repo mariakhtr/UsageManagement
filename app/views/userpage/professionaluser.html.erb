@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Untitled Document</title>
+	</head>
+	<% form_tag(:controller => "userpage" , :action=> 'downloadlic') do%>
+		<%= submit_tag ("Download") %>
+		
+	<%end%>
+	
+	<%= link_to "Back", :controller => 'userpage', :action => 'deleteprof'%>
+	<body>
+	</body>
+</html>

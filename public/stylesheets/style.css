@@ -1,0 +1,77 @@
+body {
+   font-family: Helvetica, Geneva, Arial, sans-serif;
+   font-size: small;
+   font-color: #000;
+   background-color:#FFF8C6;
+   
+}
+img{
+  margin:20px;
+  height:25px;
+  width:210px;
+  float:right;
+  text-align:center;
+}
+a:link{	text-decoration:none;    color:#222277;}
+a:visited {color:#CD0000;}
+a:hover {text-decoration:underline;} 
+table
+{
+border-collapse:collapse;
+background-color:#FFF8C6;
+color:brown;
+}
+table,th,td
+{
+border:1px solid #C35617;
+}
+td
+{width:130px;
+text-align:center;	
+}
+input { 
+   margin-bottom: 5px;
+}
+div#container {
+   width: 760px;
+   margin: 0 auto;
+}
+#side {
+  float: left;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  width: 12em;
+  background: #141 ;
+}
+h2
+{
+color:#C35617;
+font-size:22px;
+}
+h1
+{
+color:orange;
+text-align:center;
+font-size:28px;
+}
+p
+{
+font-family:"Times New Roman";
+line-height: 150%;
+font-size:18px;
+}
+main {
+  margin-left: 13em;
+  padding-top: 4ex;
+  padding-left: 2em;
+  background: white;
+}
+textarea {
+position:absolute;
+left:620px;
+top:80px;
+border: 3px solid #cccccc;
+background-color:#FFF8C6; /* this background-color is adjusted with your background text-images */
+}
+

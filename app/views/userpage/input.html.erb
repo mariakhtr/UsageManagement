@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<%= javascript_include_tag "prototype" %> 
+		<%= javascript_include_tag :defaults %>
+       <%= stylesheet_link_tag 'style'%>  
+    
+		
+		<title>Untitled Document</title>
+		<script type="text/javascript" src="/javascripts/jquery.js"></script>
+		<script type="text/javascript" src="/javascripts/form.js"></script>
+		<script language=javascript type='text/javascript'>
+			
+	function hideDiv() {
+	if (document.getElementById) { // DOM3 = IE5, NS6
+	document.getElementById('hideShow').style.visibility = 'hidden';
+	}
+	else {
+	if (document.layers) { // Netscape 4
+	document.hideShow.visibility = 'hidden';
+	}
+	else { // IE 4
+	document.all.hideShow.style.visibility = 'hidden';
+	}
+	}
+	}
+	
+	function showDiv() {
+	if (document.getElementById) { // DOM3 = IE5, NS6
+	document.getElementById('hideShow').style.visibility = 'visible';
+	}
+	else {
+	if (document.layers) { // Netscape 4
+	document.hideShow.visibility = 'visible';
+	}
+	else { // IE 4
+	document.all.hideShow.style.visibility = 'visible';
+	}
+	}
+	}
+	</script> 
+	</head>
+	<body>
+		<%= image_tag("cooltext465671349.png") %>
+		<h1> Welcome User</h1>
+		<%form_tag(:controller => 'userpage', :action=> 'addactivityrestriction')do%>	
+		
+		
+		<p></>Choose an activity: &nbsp;
+		<%= collection_select(:activity, :name, Activity.all , :id, :name) %> </p>
+		
+		<p></>Select a property : &nbsp;
+		<% remote_function :url => {:action => 'typeupdate'}, :update => 'hideShow' %>
+		
+		<%= collection_select(:property, :name, Property.find(:all),:name, :name, {}, {:id => 'name_selected'}) %>
+		<%= observe_field 'name_selected',:url => {:action => 'typeupdate'},:with => 'name', :update => 'hideShow' %>		
+		
+			
+			<%= @hellomsg%>
+		<div id="hideShow" style="visibility:visible;">
+			<select name="mydropdown" id="mydropdown">
+			<option value="greater"> > </option>
+			<option value="less"> < </option>
+			<option value="equals">==</option>
+			<option value="lesseq"><=</option>
+			<option value="greatereq">>=</option>
+			<option value="between">between</option>
+			</select>
+		</div>
+		</p>
+				
+		<p></>Enter the property restriction :
+		<input type="text" name="sthg"> </input>		
+		</p>
+		<%= submit_tag("Add Property Restriction") %>
+		<%end%>
+				
+		 <%= link_to "Display Current License", :controller => 'userpage', :action=>'displayxml' %>
+		 <%= text_area_tag :tag_name, @msg, :escape => false, :size => "50x15" %>
+		<%form_tag(:controller => 'userpage', :action=> 'createlicense') do%>
+			<%= submit_tag("Create License")%>
+		 <%end%>
+		 <%= link_to "Back", :controller => 'home' %>
+		 
+			 
+	</body>
+</html>

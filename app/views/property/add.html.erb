@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Usage Management Mechanism - Add Property</title>
+		<%= stylesheet_link_tag 'style'%>  
+	</head>
+	<body>
+		<%= image_tag("cooltext465671349.png") %>
+		<h1>Welcome Administrator </h1>
+		<h2>Listing Properties</h2>
+
+	<table>
+	  <tr>
+	    <th>Name</th>
+	    <th>Entity</th>
+	    <th>Type</th>
+	  </tr>
+	<% @properties.each do |property| %>
+	  <tr>
+	    <td><%=h property.name %></td>
+	    <td><%=h property.entity %></td>
+	    <td><%=h property.property_type %></td>		
+	  </tr>
+	<% end %>
+	
+	</table>
+	<br>
+ 		<h2> Add a New Property </h2><br>
+		<% form_tag( :controller => 'property', :action => 'insert' )do %>
+			Enter property name: <input type = "text", name = "name"> </input><br>
+			Enter property entity: <input type = "text", name = "entity"> </input><br>
+			Enter property type:   
+			<select name="property_type">
+			  <option value="Comparable">Comparable</option>
+			  <option value= "Equatable">Equatable</option>
+			</select><br>
+					
+			<%= submit_tag("Add") %>
+		<%end%>
+		
+		<%= yield%>
+		<%= link_to "Back", :controller => 'property', :action=>'signed' %>
+		<%= link_to "Logout", :controller => 'property', :action=> 'logout' %> 
+	</body>
+</html>

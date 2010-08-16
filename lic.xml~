@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<license id="327f43738cfc2a819"> 
+  <permissions> 
+    <restricted-activity num = "1" activity = "view"> 
+	  <entity-restrictions type = "Environment">
+                <restriction property="Mydate" function=">">12/01/2010</restriction> 
+          </entity-restrictions>
+
+	  <entity-restrictions type = "Subject">
+      		<restriction property="SubjectID" function="==">All</restriction>
+	  </entity-restrictions>
+
+          <entity-restrictions type = "Resource">
+	  <restriction property="ResourceID" function="==">327f43738cfc2a81909eb2093f6d49a4e470768b</restriction>
+          </entity-restrictions>
+
+    </restricted-activity> 
+    <restricted-activity num = "2" activity = "play">  
+
+      <entity-restrictions type = "Environment">
+                <restriction property = "Mydate" function = "between?">01/01/2010,03/31/2010</restriction>
+       </entity-restrictions>      
+                 
+        <entity-restrictions type = "Subject">      
+         <restriction property="SubjectID" function="==">All</restriction>
+	</entity-restrictions>
+
+	<entity-restrictions type = "Resource">
+         <restriction property="ResourceID" function="==">327f43738cfc2a81909eb2093f6d49a4e470768b</restriction>   
+	</entity-restrictions>  
+
+    </restricted-activity> 
+  </permissions> 
+  <context> 
+    <environment>
+        <property> date </property>
+        <property> location </property>
+        <property> ip_address </property>
+    </environment> 
+    <resource>
+        <property> subject_id </property>
+        <property> security_clearance </property>
+    </resource>
+    <subject>
+        <property> resource_id </property>
+        <property> sensitivity_level </property>
+    </subject> 
+  </context> 
+</license>
+    <?xml version="1.0" encoding="utf-8"?>

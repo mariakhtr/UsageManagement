@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Usage Management Mechanism - Add Activity</title>
+		<%= stylesheet_link_tag 'style'%>  
+	</head>
+	<body>
+		<h1>Welcome Administrator </h1>
+		<h2>Listing Activities</h2>
+		<table>
+	  <tr>
+	    <th>Name</th>	    
+	  </tr>
+	
+	<% @activities.each do |activity| %>
+	  <tr>
+	    <td><%=h activity.name %></td>
+	  </tr>
+	<% end %>
+	
+	</table>
+	<br>
+ 		<h2> Add a New Activity </h2><br>
+		<% form_tag( :controller => 'property', :action => 'insertactivity' )do %>
+			Enter property name: <input type = "text", name = "name"> </input><br>					
+			<%= submit_tag("Add") %>
+		<%end%>
+		<%=yield%>
+		<%= link_to "Back", :controller => 'property', :action=>'signed' %>
+		<%= link_to "Logout", :controller => 'property', :action=> 'logout'%>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+i<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Usage Management Mechanism</title>
+		<%= stylesheet_link_tag 'style'%>  
+	</head>
+	<body>
+		<% form_tag(:controller => 'userpage', :action =>'input') do%>
+		<h2> Welcome User</h2>
+		<%= submit_tag("Click Me") %>
+		<%end%> 
+		<br>
+		<br>
+		<h2> Welcome Administrator</h2>
+		
+		<div id="body" >
+		<% form_tag(:controller => "property", :action => "validate") do%>
+		
+	  	<%= label_tag(:q, "Login Admin : ") %>
+ 		<%= text_field_tag(:name) %>
+ 	  	<%= label_tag(:q, "Password       : ") %>
+ 		<%= password_field_tag(:password) %>
+  		<%= submit_tag("Login")%>
+		<% end %>
+	
+		<br> 
+		Click <%= link_to "here", :controller => 'property',:action => 'signup' %>  to register
+	
+		 
+		<br>
+		
+	</body>
+</html>

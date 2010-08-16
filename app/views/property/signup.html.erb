@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Usage Management Mechanism - Sign Up</title>
+		<%= stylesheet_link_tag 'style'%>  
+	</head>
+	<body>	
+		
+	<%= image_tag("cooltext465671349.png") %>
+	<h2> Please Register </h2>
+	<% form_tag(:controller => "property", :action => "create") do %>
+	<h3>Please register into the system <br></h3><br><table width="600" border="0">
+	    <tr>
+	        <td>Username 
+	        </td>
+	        <td> <%= text_field_tag(:name) %> <br>
+	        </td>
+	    </tr>
+	    <tr>
+	        <td>First Name
+	        </td>
+	        <td><%= text_field_tag(:fname) %> <br>
+	        </td>
+	    </tr>
+		<tr>
+	        <td>Last Name 
+	        </td>
+	        <td><%= text_field_tag(:lname)%> <br>
+	        </td>
+	    </tr>
+		<tr>
+	        <td>email 
+	        </td>
+	        <td><%= text_field_tag(:email) %> <br>
+	        </td>
+	    </tr>
+	    <tr>
+	        <td>Password 
+	        </td>
+	        <td><%= text_field_tag(:password) %> <br>
+	        </td>
+	    </tr>
+	    <tr>
+	        <td>Retype Password 
+	        </td>
+	        <td><%= text_field_tag( :password2) %> <br>
+	        </td>
+	    </tr>
+		<tr>
+	        <td>Code 
+	        </td>
+	        <td><%= text_field_tag( :code) %> <br>
+	        </td>
+	    </tr>
+	    <tr>
+	        <td>
+	        </td>
+	        <td>
+	        </td>
+	    </tr>
+	</table>
+  	<p><%= submit_tag 'Submit' %></p>  
+	<%end%>
+	<%= link_to 'Back', :controller=>"home", :action=> "index"%>
+	</body>
+</html>
